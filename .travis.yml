@@ -11,8 +11,9 @@ env:
 install: /bin/true
 before_script:
   # Install mvnvm
-  - curl 'https://bitbucket.org/mjensen/mvnvm/raw/master/mvn' > /usr/bin/mvn
-  - chmod +x /usr/bin/mvn
+  - mkdir -p ~/.local/bin
+  - curl 'https://bitbucket.org/mjensen/mvnvm/raw/master/mvn' > ~/.local/bin/mvn
+  - chmod +x ~/.local/bin/mvn
 
   - sudo /etc/init.d/mysql stop
   - ./travis/docker_bootstrap.sh
